@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-f'
+      - 'backend/Dockerfile'
+      - '-t'
+      - 'asia-south1-docker.pkg.dev/proven-reality-414110/dating-agent/dating-backend:latest'
+      - '.'
+images:
+  - 'asia-south1-docker.pkg.dev/proven-reality-414110/dating-agent/dating-backend:latest'
