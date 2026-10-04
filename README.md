@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is an AI engineering assessment demonstrating simulations generated from public profile information. Discovered people are not represented as participants or endorsers, agents do not speak for them, and no one is contacted. Compatibility scores describe only simulated exchanges, not real people's preferences. The fixture cohort contains 25 fictional profiles and no fabricated social URLs.
+This is an AI agent simulation generated from public profile information. Discovered people are not represented as participants or endorsers, agents do not speak for them, and no one is contacted. Compatibility scores describe only simulated exchanges, not real people's preferences. The fixture cohort contains 25 fictional profiles and no fabricated social URLs.
 
 ## Architecture
 
@@ -37,6 +37,7 @@ Next.js UI
 
 ## Deployment
 
-Build independent containers with `docker build -f backend/Dockerfile -t dating-backend .` and `docker build -f frontend/Dockerfile -t dating-frontend .`. The backend and Next standalone server listen on `0.0.0.0:$PORT`. Same-origin `/api/*` routes proxy to server-only `BACKEND_URL`. For GCP, deploy frontend and backend to Cloud Run, publish images to Artifact Registry, use Cloud SQL PostgreSQL via `DATABASE_URL`, and provide `GEMINI_API_KEY` and `APIFY_API_TOKEN` through Secret Manager. Configure Actor IDs and service URLs at runtime. This project does not deploy resources.
+Build independent containers with `docker build -f backend/Dockerfile -t dating-backend .` and `docker build -f frontend/Dockerfile -t dating-frontend .`. 
+The backend and Next standalone server listen on `0.0.0.0:$PORT`. Same-origin `/api/*` routes proxy to server-only `BACKEND_URL`. 
+For GCP, deploy frontend and backend to Cloud Run, publish images to Artifact Registry, use Cloud SQL PostgreSQL via `DATABASE_URL`, and provide `GEMINI_API_KEY` and `APIFY_API_TOKEN` through Secret Manager.
 
-SAGE_GENERATED`, and `COMPATIBILITY_ANALYSIS_COMPLETED`. It does not log prompts, profile text, or credentials.
